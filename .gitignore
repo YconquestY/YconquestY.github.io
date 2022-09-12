@@ -1,0 +1,8 @@
+# default editor
+.vscode
+# Node.js
+node_modules/
+# VuePress
+.cache/
+.temp/
+dist/

@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "version": "0.1.0",
+  "description": "Will's Blog",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "vuepress info",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:clean-dev": "vuepress dev docs --clean-cache"
+  },
+  "author": "Will Yu",
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/client": "2.0.0-beta.51",
+    "vue": "^3.2.27",
+    "vuepress": "2.0.0-beta.51",
+    "vuepress-theme-hope": "2.0.0-beta.97"
+  }
+}
