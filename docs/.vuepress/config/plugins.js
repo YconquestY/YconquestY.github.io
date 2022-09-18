@@ -8,6 +8,7 @@ const plugins = {
         sub: true,          // enable subscripts
         sup: true,          // enable superscripts
         tabs: true,         // enable tabs
+        tex: true,          // patch
         katex: true         // enable KaTeX
     },
     components: ["Badge", "CodePen", "YouTube"]
