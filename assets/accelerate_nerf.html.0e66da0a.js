@@ -1,0 +1,1 @@
+import{_ as e}from"./_plugin-vue_export-helper.cdc0426e.js";import{o as t,c,b as o}from"./app.b6494994.js";const n={},r=o("p",null,"initialization: point-NeRF",-1),_=[r];function a(s,i){return t(),c("div",null,_)}const m=e(n,[["render",a],["__file","accelerate_nerf.html.vue"]]);export{m as default};

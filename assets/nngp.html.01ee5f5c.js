@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-410ebaaa","path":"/blog/ml/ntk/nngp.html","title":"","lang":"en-US","frontmatter":{"author":"Will Yu","isOriginal":true},"excerpt":"","headers":[],"git":{},"readingTime":{"minutes":0.02,"words":5},"filePathRelative":"blog/ml/ntk/nngp.md"}');export{t as data};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-60000714","path":"/blog/ml/nerf/accelerate_nerf.html","title":"","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{},"readingTime":{"minutes":0.01,"words":3},"filePathRelative":"blog/ml/nerf/accelerate_nerf.md"}');export{e as data};

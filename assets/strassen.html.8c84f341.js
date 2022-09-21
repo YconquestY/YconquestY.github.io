@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-52dcaff6","path":"/misc/strassen.html","title":"","lang":"en-US","frontmatter":{"author":"Will Yu","isOriginal":true},"excerpt":"","headers":[],"git":{},"readingTime":{"minutes":0.02,"words":5},"filePathRelative":"misc/strassen.md"}');export{e as data};

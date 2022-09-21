@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-04ee9785","path":"/blog/ml/nerf/nerf_signal.html","title":"NeRF: A Signal Reconstruction Perspective","lang":"en-US","frontmatter":{"author":"Will Yu","isOriginal":true},"excerpt":"","headers":[],"git":{},"readingTime":{"minutes":0.14,"words":41},"filePathRelative":"blog/ml/nerf/nerf_signal.md"}');export{e as data};
