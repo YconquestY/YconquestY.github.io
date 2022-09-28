@@ -1,4 +1,12 @@
 const plugins = {
+    comment: {
+        provider  : "Giscus",
+        repo      : "YconquestY/comments", // `data-repo`
+        repoId    : "R_kgDOIFj9NQ",        // `data-repo-id`
+        category  : "General",             // `data-category`
+        categoryId: "DIC_kwDOIFj9Nc4CRr3V" // `data-category-id`
+    },
+    components: ["Badge", "CodePen", "YouTube"],
     mdEnhance: {
         codetabs: true,     // enable code tabs
                             // custom container enabled by default
@@ -9,8 +17,7 @@ const plugins = {
         sup: true,          // enable superscripts
         tabs: true,         // enable tabs
         katex: true         // enable KaTeX
-    },
-    components: ["Badge", "CodePen", "YouTube"]
+    }
 }
 
 module.exports = plugins
