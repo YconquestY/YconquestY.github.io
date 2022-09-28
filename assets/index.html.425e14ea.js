@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-5f14005e","path":"/prez/fyp/","title":"Neural Rendering on the Edge","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{},"readingTime":{"minutes":0.07,"words":22},"filePathRelative":"prez/fyp/README.md"}');export{e as data};
