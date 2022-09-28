@@ -1,15 +1,14 @@
-import { defineUserConfig } from "vuepress" // necessary?
 import { hopeTheme } from "vuepress-theme-hope"
 
 //const nav = require('./config/nav')
 const plugins = require("./config/plugins")
 
 
-export default defineUserConfig({
+export default {
     /* I18n */
     lang: "en-US",
     /* theme */
-    author: "Yue Yu",
+    author: "YU Yue",
     /* layout */
     //navbar: ?
     logo: "./logo.png",
@@ -21,9 +20,9 @@ export default defineUserConfig({
     lastUpdated: false,
     contributors: false,
     editLink: false,
-    copyright: "Copyright © Yue Yu",
+    copyright: "Copyright © YU Yue",
     title: "Will",
-    description: 'Yue Yu (Will)\'s Blog',
+    description: 'YU Yue\'s personal website',
     markdown: {
        code: {
            lineNumbers: false // hide line index
@@ -32,4 +31,4 @@ export default defineUserConfig({
     theme: hopeTheme({
         plugins: plugins
     })
-})
+}

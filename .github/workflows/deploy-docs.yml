@@ -20,30 +20,19 @@ jobs:
         with:
           node-version: 16
           cache: npm
-      # cache node_modules
-      - name: cache dependencies
-        uses: actions/cache@v2
-        id: yarn-cache
-        with:
-          path: |
-            **/node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      # install dependencies if cache did not hit
-      - name: install dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn --frozen-lockfile
-      # run build script
-      - name: build VuePress site
-        run: yarn docs:build
+      
+      - name: install deps
+        run: npm install
 
-      - name: deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2
-        with:
-          # deploy to gh-pages branch
-          target_branch: gh-pages
-          # deploy the default output dir of VuePress
-          build_dir: docs/.vuepress/dist
+      - name: build docs
         env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: |-
+          npm run docs:build
+          > tmp/.vuepress/dist/.nojekyll
+
+      - name: deploy docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: tmp/.vuepress/dist

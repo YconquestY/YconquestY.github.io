@@ -6,3 +6,6 @@ node_modules/
 .cache/
 .temp/
 dist/
+# theme
+guide/
+

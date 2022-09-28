@@ -832,7 +832,7 @@ By encapsulation with `batchify_rays(…)` and `render(…)`, training options `
 
 :::: tabs
 
-@tab:active Rendering each ray
+@tab Rendering each ray
 
 ```python:line-numbers
 def render_rays(ray_batch,
@@ -999,7 +999,7 @@ $$
 
 Another mass network query is performed at line $\verb|71|$, whose raw outputs are converted to radiance `rgb_map` at $\verb|71|$.
 
-@tab "Shading"
+@tab Shading
 
 ```python:line-numbers
 def raw2outputs(raw, z_vals, rays_d, raw_noise_std=0, white_bkgd=False, pytest=False):
@@ -1221,11 +1221,12 @@ $$
 Content on the way. Stay tuned!
 :::
 
-@tab Hierarchical sampling
+@tab:active Hierarchical sampling
 
 <img src="./nerf_rendering/bins.png" alt="Midpoints of samples as bins" title="copyright © Will Yu">
 
 `sample_pdf(…)` in `run_nerf_helpers.py` performs hierarchical sampling via *Monte Carlo method*. It is invoked by
+
 ```python
         …
         z_samples = sample_pdf(z_vals_mid,
@@ -1235,6 +1236,7 @@ Content on the way. Stay tuned!
                                pytest=pytest)
         …
 ```
+
 in `render_rays(…)`, where `z_vals_mid` is a tensor of midpoints of coarse sample disparities. Note that the leading and trailing columns of `weights` are excluded from the input such that
 $$
 \mathbf{W}\verb|[..., 1:-1]|
