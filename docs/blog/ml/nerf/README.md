@@ -1,5 +1,5 @@
 ---
-author: "Yue Yu"
+author: "YU Yue"
 isOriginal: true
 ---
 # A Surge in NeRF
@@ -8,6 +8,7 @@ isOriginal: true
 
 My post on [volume rendering](./nerf_rendering.html) is out!<br>
 My post on [NDC space](./nerf_ndc.html) is out!
+
 ## Overview
 
 On the way. Stay tuned!

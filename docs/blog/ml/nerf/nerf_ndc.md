@@ -1,5 +1,5 @@
 ---
-author: "Yue Yu"
+author: "YU Yue"
 isOriginal: true
 ---
 # NeRF: How NDC Works

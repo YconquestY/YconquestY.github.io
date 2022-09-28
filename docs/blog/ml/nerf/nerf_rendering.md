@@ -1,5 +1,5 @@
 ---
-author: "Yue Yu"
+author: "YU Yue"
 isOriginal: true
 ---
 # NeRF: A Volume Rendering Perspective
@@ -48,11 +48,11 @@ ray tracing, ray casting
 
 ### The rendering formula
 
-<img src="./nerf_rendering/ray.png" alt="Ray model" title="copyright © Will Yu">
+<img src="./nerf_rendering/ray.png" alt="Ray model" title="copyright © YU Yue">
 
 A ray with origin $\boldsymbol{o}$ and direction $\boldsymbol{d}$ casts to an arbitrary region of bounded space. Assume, for simplicity, that the cross section area $A$ is uniform along the ray. Let's focus on a slice of the region with thickness $\Delta z$.
 
-<img src="./nerf_rendering/slice.png" alt="Slice of region" title="copyright © Will Yu">
+<img src="./nerf_rendering/slice.png" alt="Slice of region" title="copyright © YU Yue">
 
 Occluding objects are modeled as spherical particles with radius $r$. Let $\rho(z\gray{; \boldsymbol{o}, \boldsymbol{d}})$ denote the particle density — number of particles per unit volume — in that orientation. If $\Delta z$ is small enough such that $\rho(z)$ is consistent on the slice, then there are
 $$
@@ -257,7 +257,7 @@ $$
 \boldsymbol{c} = \alpha \boldsymbol{c}_f + (1 - \alpha) \boldsymbol{c}_b
 $$
 
-<img src="./nerf_rendering/alpha_compositing.png" alt="Alpha compositing" title="copyright © Will Yu">
+<img src="./nerf_rendering/alpha_compositing.png" alt="Alpha compositing" title="copyright © YU Yue">
 
 When blending colors of multiple objects, one can adopt a *divide-and-conquer* approach. Each time, cope with the unregistered object closest to the eye and treat the remaining objects as a **single** entity. Such a strategy is formulated by
 $$
@@ -397,7 +397,7 @@ coarse to fine
 
 Whereas NeRF is [originally implemented](https://github.com/bmild/nerf) in [Tensrorflow](https://www.tensorflow.org/), code analysis is based on a [faithful reproduction](https://github.com/yenchenlin/nerf-pytorch) in [PyTorch](https://pytorch.org/). The repository is organized as
 
-<img src="./nerf_rendering/nerf-pytorch.png" alt="Directory organization" title="copyright © Will Yu">
+<img src="./nerf_rendering/nerf-pytorch.png" alt="Directory organization" title="copyright © YU Yue">
 
 Let's experiment with the [LLFF dataset](https://drive.google.com/drive/folders/14boI-o5hGO9srnWaaogTU5_ji7wkX2S7), which is comprised of front-facing scenes with camera poses. Pertinent directories and files are
 
@@ -562,7 +562,7 @@ $$
 <table>
     <tr>
         <td><img src="./nerf_rendering/camera_coordinates.png" alt="Camera coordinates" title="source: chapter 4.3, Foundamentals of Computer Graphics"></td>
-        <td><img src="./nerf_rendering/image_coordinates.png" alt="Image coordinates" title="source: chapter 2.1, Computer Vision: Algorithms and Applications; edited by Will Yu"></td>
+        <td><img src="./nerf_rendering/image_coordinates.png" alt="Image coordinates" title="source: chapter 2.1, Computer Vision: Algorithms and Applications; edited by YU Yue"></td>
     </tr>
 </table>
 
@@ -929,15 +929,15 @@ Lines $\verb|14|$ to $\verb|21|$ unpack each mini-batch to separate physical val
 
 Lines $\verb|22|$ to $\verb|44|$ initialize the samples for [ray marching](#ray-marching). [`torch.linspace(…)`](https://pytorch.org/docs/stable/generated/torch.linspace.html) at line $\verb|22|$ create a sequence of $N_C$ points evenly scattered along unit length. Recall that rays are [previously](#ndc) projected to [NDC space](./nerf_ndc.html). `False` by default, `lindisp`  dictates the voxels are sampled linearly on disparity (inverse depth). `z_vals` simply replicates `t_vals` (lines $\verb|24|$ and $\verb|29|$) to modulate all points on a batch of rays.
 
-<img src="./nerf_rendering/initial_points.png" alt="Initial points" title="copyright © Will Yu">
+<img src="./nerf_rendering/initial_points.png" alt="Initial points" title="copyright © YU Yue">
 
 There are $N_C - 1$ intervals along each ray. To pick $N_C$ random points out of those intervals ("bins"), at least $2$ of them should have length less than $\frac{1}{N_C - 1}$. The authors cut the first and last "bin" in half so that all $N_C$ "bins" fit to the interval $[0, 1]$. Line $\verb|33|$ determines of midpoints of `z_vals`, which are afterwards combined with the start (line $\verb|35|$) and endpoint bound (line $\verb|34|$) of each ray.
 
-<img src="./nerf_rendering/intermediate_points.png" alt="Intermediate points" title="copyright © Will Yu">
+<img src="./nerf_rendering/intermediate_points.png" alt="Intermediate points" title="copyright © YU Yue">
 
 Subtracting the lower bound from the upper bound finalizes the length of "bins", and stratified sampling is achieved by uniformly sampling every interval. Now, sample $z_i$ lies in bin $i \ \forall i \in \{1, 2, \ldots, N_C\}$.
 
-<img src="./nerf_rendering/samples.png" alt="Samples" title="copyright © Will Yu">
+<img src="./nerf_rendering/samples.png" alt="Samples" title="copyright © YU Yue">
 
 Let $z_i^{(b)}$ denote the $i$^th^ sample on the $b$^th^ ray in a batch, then `z_vals` at line $\verb|44|$ is
 $$
@@ -1223,7 +1223,7 @@ Content on the way. Stay tuned!
 
 @tab:active Hierarchical sampling
 
-<img src="./nerf_rendering/bins.png" alt="Midpoints of samples as bins" title="copyright © Will Yu">
+<img src="./nerf_rendering/bins.png" alt="Midpoints of samples as bins" title="copyright © YU Yue">
 
 `sample_pdf(…)` in `run_nerf_helpers.py` performs hierarchical sampling via *Monte Carlo method*. It is invoked by
 
@@ -1251,15 +1251,15 @@ $$
 
 @[code{191-232} python:line-numbers](./run_nerf_helpers.py)
 
-<img src="./nerf_rendering/pdf.png" alt="PDF" title="copyright © Will Yu">
+<img src="./nerf_rendering/pdf.png" alt="PDF" title="copyright © YU Yue">
 
 Line $\verb|4|$ defines the probability [$p_i$](#hit-pdf)$:= \frac{w_i}{\sum_{j=\blue{2}}^{\blue{N_C-1}} w_j}$ that a ray is stopped by a particle at depth $\frac{z_i + z_{i+1}}{2}$. This corresponds to the **area** under the histogram, shown above (first ray only).
 
-<img src="./nerf_rendering/cdf.png" alt="Midpoints of samples as bins" title="copyright © Will Yu">
+<img src="./nerf_rendering/cdf.png" alt="Midpoints of samples as bins" title="copyright © YU Yue">
 
 Lines $\verb|5|$ and $\verb|6|$ accumulate the area for the CDF [$H(z)$](#hit-cdf).
 
-<img src="./nerf_rendering/indices.png" alt="Indices" title="copyright © Will Yu">
+<img src="./nerf_rendering/indices.png" alt="Indices" title="copyright © YU Yue">
 
 What follows is key to *Monte Carlo sampling*. Line $\verb|12|$ generates a batch $\mathbf{u}_{\gray{B \times N_F}}$ of random cumulative probabilities — "seeds". The above figure visualizes operations on `u[0, :]`, i.e., $N_F$ seeds on the first ray. They fall into the "bins" at line $\verb|25|$ through comparison against the cumulative probabilities at the boundaries. [`torch.searchsorted(…)`](https://pytorch.org/docs/stable/generated/torch.searchsorted.html) returns the positions (indices) `inds` $\in \mathbb{R}^{B \times N_F}$ of those random "seeds".
 
@@ -1269,7 +1269,7 @@ What follows is key to *Monte Carlo sampling*. Line $\verb|12|$ generates a batc
 
 Lower bounds of the "bins" are collected as `below` at line $\verb|26|$, and upper bounds are gathered as `above` at line $\verb|27|$. `inds_g` $\in \mathbb{R}^{B \times N_F \times 2}$ combines `below` and `above` at line $\verb|28|$. [`torch.gather(…)`](https://pytorch.org/docs/stable/generated/torch.gather.html) at lines $\verb|33|$ and $\verb|34|$ determine how $N_F$ points along each ray are distributed according to indices `inds_g`, or effectively the number of "seeds" in each "bin".
 
-<img src="./nerf_rendering/fine_samples.png" alt="Fine samples" title="copyright © Will Yu">
+<img src="./nerf_rendering/fine_samples.png" alt="Fine samples" title="copyright © YU Yue">
 
 Finally, fine samples are found through *similarity*, whose concept is illustrated above. Indices `0` correspond to `below`, and indices `1` attach to `above`. Given cumulative probabilities `u`, there holds
 $$

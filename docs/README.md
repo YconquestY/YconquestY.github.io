@@ -1,14 +1,14 @@
 ---
 home: true
 heroImage: img/me.jpg
-footer: MIT Licensed | Copyright © 2022 Yue Yu
+footer: MIT Licensed | Copyright © 2022 YU Yue
 ---
 <!-- landing page -->
-# Hello there.
+# Hello there
 
 ## Introduction
 
-I am Yue Yu (于跃), an undergraduate at the [University of Hong Kong](https://www.hku.hk/).
+I am YU Yue (于跃), an undergraduate at the [University of Hong Kong](https://www.hku.hk/).
 
 ## Research
 
