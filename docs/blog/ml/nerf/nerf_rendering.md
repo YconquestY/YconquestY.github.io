@@ -6,7 +6,7 @@ isOriginal: true
 
 ## Overview
 
-[NeRF](https://www.matthewtancik.com/nerf) **implicitly** represents a 3D scene with a multi-layer perceptron (MLP) $F: (\boldsymbol{x}, \boldsymbol{d}) \rightarrow (\boldsymbol{c}, \sigma)$ for some position $\boldsymbol{x} \in \mathbb{R}^3$, view direction $\boldsymbol{d} \in [0, \pi) \times [0, 2\pi)$, color $\boldsymbol{c} \in [0, 255]^3$, and "opacity" $\sigma$. Renders results are spectacular.
+[NeRF](https://www.matthewtancik.com/nerf) **implicitly** represents a 3D scene with a multi-layer perceptron (MLP) $F: (\boldsymbol{x}, \boldsymbol{d}) \rightarrow (\boldsymbol{c}, \sigma)$ for some position $\boldsymbol{x} \in \mathbb{R}^3$, view direction $\boldsymbol{d} \in [0, \pi) \times [0, 2\pi)$, color $\boldsymbol{c}$, and "opacity" $\sigma$. Rendered results are spectacular.
 
 <YouTube id="gGaqqs5Q-yo" autoplay=true loop=true disableFullscreen=false />
 
@@ -38,13 +38,6 @@ This post delves into the volume rendering aspect of NeRF. The equations will be
 - Familiarity with [PyTorch](https://pytorch.org/) and [NumPy](https://numpy.org/)
 
 ## Background
-
-<!--
-### Ray marching
-
-image-order rendering
-ray tracing, ray casting
--->
 
 ### The rendering formula
 
@@ -264,37 +257,37 @@ $$
 \begin{align*}
 \boldsymbol{c}
 &=
-\red{\alpha_1 \boldsymbol{c}_1} + (1 - \red{\alpha_1})\left(
-    \blue{\alpha_2 \boldsymbol{c}_2} + \left( 1 - \blue{\alpha_2} \right)\left(
-        \green{\alpha_3 \boldsymbol{c}_3} + \left( 1 - \green{\alpha_3} \right)\left(
+\red{\alpha_1 \boldsymbol{c}_1} + (1 - \red{\alpha_1})\biggl(
+    \blue{\alpha_2 \boldsymbol{c}_2} + \left( 1 - \blue{\alpha_2} \right)\Bigl(
+        \green{\alpha_3 \boldsymbol{c}_3} + \left( 1 - \green{\alpha_3} \right)\bigl(
             \orange{\alpha_4 \boldsymbol{c}_4} + (1 - \orange{\alpha_4})\left(
                 \cdots
             \right)
-        \right)
-    \right)
-\right) \\
+        \bigr)
+    \Bigr)
+\biggr) \\
 &=
 \red{\alpha_1 \boldsymbol{c}_1}
 + (1 - \red{\alpha_1})\blue{\alpha_2 \boldsymbol{c}_2} \\
 & \ \ \ \ \ \ \ \ \ \ \ \ \
-+ (1 - \red{\alpha_1})( 1 - \blue{\alpha_2})\left(
-        \green{\alpha_3 \boldsymbol{c}_3} + \left( 1 - \green{\alpha_3} \right)\left(
++ (1 - \red{\alpha_1})( 1 - \blue{\alpha_2})\Bigl(
+        \green{\alpha_3 \boldsymbol{c}_3} + \left( 1 - \green{\alpha_3} \right)\bigl(
             \orange{\alpha_4 \boldsymbol{c}_4} + (1 - \orange{\alpha_4})\left(
                 \cdots
             \right)
-        \right)
-    \right) \\
+        \bigr)
+    \Bigr) \\
 &=
 \red{\alpha_1 \boldsymbol{c}_1}
 + (1 - \red{\alpha_1})\blue{\alpha_2 \boldsymbol{c}_2} \\
 & \ \ \ \ \ \ \ \ \ \ \ \ \
 + (1 - \red{\alpha_1})(1 - \blue{\alpha_2})\green{\alpha_3 \boldsymbol{c}_3} \\
 & \ \ \ \ \ \ \ \ \ \ \ \ \
-+ (1 - \red{\alpha_1})(1 - \blue{\alpha_2})(1 - \green{\alpha_3})\left(
++ (1 - \red{\alpha_1})(1 - \blue{\alpha_2})(1 - \green{\alpha_3})\bigl(
             \orange{\alpha_4 \boldsymbol{c}_4} + (1 - \orange{\alpha_4})\left(
                 \cdots
             \right)
-        \right) \\
+        \bigr) \\
 &=
 \red{\alpha_1 \boldsymbol{c}_1}
 + (1 - \red{\alpha_1})\blue{\alpha_2 \boldsymbol{c}_2} \\
@@ -306,7 +299,7 @@ $$
 + (1 - \red{\alpha_1})(1 - \blue{\alpha_2})(1 - \green{\alpha_3})(1 - \orange{\alpha_4})\left(
                 \cdots
             \right) \\
-&\cdots
+&= \cdots
 \end{align*}
 $$
 which is essentially a *tail recursion*.

@@ -449,7 +449,7 @@ The code for NDC transformation is encapsulated into a function, `ndc_rays(…)`
 
 `K` is a calibration matrix $\mathbf{K} = \begin{bmatrix} f_\text{camera} & 0 & \frac{W}{2} \\ 0 & f_\text{camera} & \frac{H}{2} \\ 0 & 0 & 1 \end{bmatrix}$, also the camera intrinsics. `K[0][0]` is the top left element of the $\mathbf{K}$, essentially the focal length of a camera.
 
-We first present the function in its entirety, it will then be analyzed step by step.`
+We first present the function in its entirety, it will then be analyzed step by step.
 
 ### Implementation
 

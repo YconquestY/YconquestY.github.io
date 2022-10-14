@@ -13,6 +13,8 @@ export default {
     //navbar: ?
     logo: "./logo.png",
     repo: "https://github.com/YconquestY/YconquestY.github.io",
+    repoLabel: "GitHub",
+    repoDisplay: true,
     //sidebar: ?
     prevLink: false,
     nextLink: false,
@@ -22,7 +24,7 @@ export default {
     editLink: false,
     copyright: "Copyright © YU Yue",
     title: "Will",
-    description: 'YU Yue\'s personal website',
+    description: 'YU Yue\'s homepage',
     markdown: {
        code: {
            lineNumbers: false // hide line index

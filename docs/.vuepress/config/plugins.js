@@ -11,6 +11,7 @@ const plugins = {
         codetabs: true,     // enable code tabs
                             // custom container enabled by default
                             // `info` and `note` container UI exchanged?
+        footnote: true,     // enable footnote
         mermaid: true,      // enable mermaid.js
         presentation: true, // enable presentation mode
         sub: true,          // enable subscripts
