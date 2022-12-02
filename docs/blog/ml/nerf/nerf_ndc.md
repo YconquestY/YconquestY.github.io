@@ -492,6 +492,17 @@ Chapter 2.1 in [Computer Vision: Algorithms and Applications](https://szeliski.o
 [NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis](https://arxiv.org/abs/2003.08934)<br>
 [NeRF PyTorch implementation](https://github.com/yenchenlin/nerf-pytorch) by [Yen-Chen Lin](https://yenchenlin.me/)
 
+Please use the following BibTeX to cite this post:
+
+```
+@misc{yyu2022nerfndc,
+    author = {YU Yue},
+    title  = {NeRF: How NDC Works},
+    year   = {2022},
+    howpublished = {\url{https://yconquesty.github.io/blog/ml/nerf/nerf_ndc.html}}
+}
+```
+
 ## Errata
 
 | Time        | Modification    |
@@ -499,3 +510,4 @@ Chapter 2.1 in [Computer Vision: Algorithms and Applications](https://szeliski.o
 | Aug 12 2022 | Initial release |
 | Aug 20 2022 | Fix typo; add 3B1B videos; replace "$\text{focal}$" with "$f_\text{camera}$"; update custom containers |
 | Aug 31 2022 | Update dataflow diagram; update custom containers |
+| Dec  2 2022 | Add BibTeX for citation |

@@ -1,6 +1,7 @@
 ---
 #home: true
 #heroImage: img/me.jpg
+shortTitle: "cd ~"
 footer: MIT Licensed | Copyright © 2022 YU Yue
 ---
 <!-- landing page -->
@@ -30,10 +31,12 @@ I am currently working on rapid and accurate 3D reconstruction of real-world sce
 
 *Needle* is a deep learning library with customized GPU and NumPy CPU backend. The project is still in progress; see [my repository](https://github.com/YconquestY/Needle) for details.
 
-### NTK
+### To infinity and beyond[^lightyear]
 
 <img src="./.vuepress/public/img/ds_distillation.png" alt="Dataset distillation" title="source: Dataset Distillation with Infinitely Wide Convolutional Networks by Timothy Nguyen, Roman Novak, Lechao Xiao, and Jaehoon Lee">
 
-Ever though of achieving $65$% test accuracy on CIFAR-10 with merely $10$ data points? *Neural tangent kernel* (NTK) is the way.[^way]
+Ever though of achieving $65$% test accuracy on CIFAR-10 with merely $10$ data points? It is achieved with *neural tangent kernel* (NTK). This is the way.[^way]
 
-[^way]: "This is the way" is a line in the Star Wars series [the Mandalorian](https://www.disneyplus.com/en-gb/series/the-mandalorian/3jLIGMDYINqD), which describes the "Mando" style. It is cited here to emphasize only NTK may achieve such an unbelievable result as dataset distillation.
+[^lightyear]: "To infinity and beyond" is a catchphrase by [Buzz Lightyear](https://disney.fandom.com/wiki/Buzz_Lightyear) from the Pixar animation film [Toy Story](https://www.disneyplus.com/en-gb/movies/toy-story/1Ye1nzUgtF7d). It is cited here to indicate NTK enables an **infinitely wide** hidden layer in neural networks.
+
+[^way]: "This is the way" is a line from the Star Wars series [the Mandalorian](https://www.disneyplus.com/en-gb/series/the-mandalorian/3jLIGMDYINqD), which describes the "Mando" style. It is cited here to emphasize only NTK may achieve such an unbelievable result as dataset distillation.

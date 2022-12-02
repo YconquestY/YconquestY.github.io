@@ -1325,13 +1325,24 @@ This post derives the volmue rendering integral and its numrical quadrature. Als
 ## References
 
 Chapter 2.1 in [Computer Vision: Algorithms and Applications](https://szeliski.org/Book/)<br>
-[Foundations of Computer Graphics](https://www.routledge.com/Fundamentals-of-Computer-Graphics/Marschner-Shirley/p/book/9780367505035)<br>
+[Foundamentals of Computer Graphics](https://www.routledge.com/Fundamentals-of-Computer-Graphics/Marschner-Shirley/p/book/9780367505035)<br>
 [NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis](https://arxiv.org/abs/2003.08934)<br>
 [NeRF PyTorch implementation](https://github.com/yenchenlin/nerf-pytorch) by [Yen-Chen Lin](https://yenchenlin.me/)<br>
 [Neural Radiance Field's Volume Rendering 公式分析](https://raymondkevin.top/2021/07/22/neural-radiance-fields-volume-rendering-%E5%85%AC%E5%BC%8F%E5%88%86%E6%9E%90/)<br>
 [Optical Models for Direct Volume Rendering](https://ieeexplore.ieee.org/document/468400)<br>
 [Part 1](https://youtu.be/otly9jcZ0Jg?t=5445) of the [SIGGRAPH 2021 course on Advances in Neural Rendering](https://www.neuralrender.com/)<br>
 [深度解读yenchenlin/nerf-pytorch项目](https://blog.csdn.net/NGUever15/article/details/123862996)
+
+Please use the following BibTeX to cite this post:
+
+```
+@misc{yyu2022nerfrendering,
+    author = {YU Yue},
+    title  = {NeRF: A Volume Rendering Perspective},
+    year   = {2022},
+    howpublished = {\url{https://yconquesty.github.io/blog/ml/nerf/nerf_rendering.html}}
+}
+```
 
 ## Appendix
 
@@ -1342,5 +1353,7 @@ Content on the way. Stay tuned!
 | Time | Modification |
 | ---  | ---          |
 | Aug 31 2022 | Initial release |
+| Nov 24 2022 | Rectify reference list |
+| Dec  2 2022 | Add BibTeX for citation |
 <!-- | ? | Add explanation on network creation and intialization | -->
 <!-- | ? | Add elaboration on outputs other than `rgb_map` and `weights` | -->

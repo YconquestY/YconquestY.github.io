@@ -6,8 +6,8 @@ isOriginal: true
 
 ## News
 
-<!--My post on [volume rendering](./nerf_rendering.html) is out! [link](./nerf_rendering.html)<br>
-My post on [NDC space](./nerf_ndc.html) is out! [link](./nerf_ndc.html)<br>-->
+My post on [volume rendering](./nerf_rendering.html) is out! ([link](./nerf_rendering.html))<br>
+My post on [NDC space](./nerf_ndc.html) is out! ([link](./nerf_ndc.html))<br>
 
 ## Overview
 
@@ -29,7 +29,7 @@ The problem is typically attacked in two stages: inverse rendering — construct
 
 <img src="./README/3d_supervision.png" alt="Supervision in 3D" title="copyright © YU Yue">
 
-**CV for inverse rendering** A 3D model can be explicitly represented by mesh, point cloud, voxel grid, or **m**ulti-**p**lane **i**mages (MPI). This renders learning-based solutions to other pertinent problems, such as **s**tructure **f**rom **m**otion (SfM) and **m**ulti-**v**iew **s**tereo (MVS), qualified for ?. Nonetheless, those approaches are often dependent on direct supervion, where 3D ground truths are time-consuming to obtain. Explicit representations are also memory-demanding. Hence, learning-based CV schemes hardly scale to real-world scenes.
+**CV for inverse rendering** A 3D model can be explicitly represented by mesh, point cloud, voxel grid, or **m**ulti-**p**lane **i**mages (MPI). This renders learning-based solutions to other pertinent problems qualified for reconstruction, such as **s**tructure **f**rom **m**otion (SfM) and **m**ulti-**v**iew **s**tereo (MVS). Nonetheless, those approaches are often dependent on direct supervion, where 3D ground truths are time-consuming to obtain. Explicit representations are also memory-demanding. Hence, learning-based CV schemes hardly scale to real-world scenes.
 
 <img src="./README/2d_supervision.png" alt="Supervision in 2D?" title="copyright © YU Yue">
 
@@ -55,6 +55,13 @@ given "volume density" $\sigma$ and color $\boldsymbol{c}$.
 
 [Volume rendering](./nerf_rendering.html) is an image-ordered approach. For every pixel, a ray ejects from the camera, passes through the pixel center, and "casts" to the volumetric representation. Unlink *ray tracing*, it does **not** reflect off surfaces. Rather, it marches through the entire volume. This is reminiscent of *ray casting*, widely applicable in medical imaging. On the constrary, it does **not** intend to reveal the internal structure of "volume data". What we want is the color of that pixel. Such a novel approach is referred to ***ray marching***.
 
+<!-- This is actually a `note` container. -->
+::: info
+personal view, may be controversial
+
+not strictly "physical"
+:::
+
 ## Analysis
 
 The above integral demands the **continuity** of $\sigma$ and $\boldsymbol{c}$, making the volumetric representation essentially a [*scalar field*](https://en.wikipedia.org/wiki/Field_(physics)).
@@ -76,7 +83,7 @@ mip-NeRF, mip-NeRF 360, ref-NeRF
 
 [^mislead]: ?
 
-[^bvs]: "Men are still good" is an ending line of the film [Batman v Superman: Dawn of Justice](https://www.imdb.com/title/tt2975590/) conveying Bruce Wayne's faith in mankind. It is cited here to imply that pure MLP representations of radiance field are not (at all) inferior to "hybrid" rpresentations, in terms of quality, of course.
+[^bvs]: "Men are still good" is an ending line from the film [Batman v Superman: Dawn of Justice](https://www.imdb.com/title/tt2975590/) conveying Bruce Wayne's faith in mankind. It is cited here to imply that pure MLP representations of radiance field are not (at all) inferior to "hybrid" rpresentations, in terms of quality, of course.
 
 ## References
 
@@ -90,7 +97,8 @@ mip-NeRF, mip-NeRF 360, ref-NeRF
 [PlenOctrees for Real-time Neural Radiance Fields](https://arxiv.org/abs/2103.14024)<br>
 [Plenoxels: Radiance Fields without Neural Networks](https://arxiv.org/abs/2112.05131)<br>
 [Point-NeRF: Point-based Neural Radiance Fields](https://arxiv.org/abs/2201.08845)<br>
-[Ref-Nerf: Structured View-Dependent Appearance for Neural Radiance Fields](https://arxiv.org/abs/2112.03907)
+[Ref-Nerf: Structured View-Dependent Appearance for Neural Radiance Fields](https://arxiv.org/abs/2112.03907)<br>
+[NeRF（神经辐射场）有相关的物理（光学）原理支撑吗？](https://www.zhihu.com/question/526879513)
 
 ## Errata
 
