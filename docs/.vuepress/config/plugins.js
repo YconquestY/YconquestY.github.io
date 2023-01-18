@@ -13,7 +13,9 @@ const plugins = {
                             // `info` and `note` container UI exchanged?
         footnote: true,     // enable footnote
         mermaid: true,      // enable mermaid.js
-        presentation: true, // enable presentation mode
+        presentation: {
+            plugins: ["highlight", "math"]
+        },                  // enable presentation mode
         sub: true,          // enable subscripts
         sup: true,          // enable superscripts
         tabs: true,         // enable tabs
