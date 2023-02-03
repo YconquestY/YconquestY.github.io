@@ -7,6 +7,8 @@ layout: Slide
 
 ## Midterm Report of ELEC4848
 
+Yu Yue (Will)
+
 ---
 
 ## KEYWORDS
@@ -109,7 +111,7 @@ I am implementing neural rendering algorithms for *novel view synthesis*.
 ### CPU/CUDA backend
 
 - Sparse training
-  - [Pixelfly](https://hazyresearch.stanford.edu/blog/2022-01-17-Sparsity-3-Pixelated-Butterfly) at ICML'22<br>
+  - [Pixelfly](https://hazyresearch.stanford.edu/blog/2022-01-17-Sparsity-3-Pixelated-Butterfly) at ICLR'22<br>
   ![](/prez/fyp/pixelfly.png)
   <!-- .element: class="fragment fade-in" -->
 
@@ -197,7 +199,7 @@ My [blog](https://yconquesty.github.io/blog/ml/nerf/nerf_rendering.html) on diff
 
 <!-- .element: class="r-stretch" -->
 
-This is *neural radiance field* (NeRF) at ECCV'22.
+This is *neural radiance field* (NeRF) at ECCV'20.
 <!-- .element: class="fragment fade-in" -->
 
 --
