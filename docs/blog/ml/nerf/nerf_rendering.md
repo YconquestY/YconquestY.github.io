@@ -944,6 +944,7 @@ z_1^{(B)} & z_2^{(B)} & \cdots & z_{N_C}^{(B)}
 \end{bmatrix}
 $$
 
+<!-- This is actually a `note` container -->
 ::: info Sampling: slight deviation of practice from theory
 Implementation of stratified sampling is **inconsistent** with what is described in the paper. Theoretically, a sample $z_i$ is obtained via
 $$
@@ -977,6 +978,72 @@ z_1^{(2)} & z_2^{(2)} & \cdots & z_{N_C \blue{+ N_F}}^{(2)} \\
 z_1^{(B)} & z_2^{(B)} & \cdots & z_{N_C \blue{+ N_F}}^{(B)}
 \end{bmatrix}
 $$
+
+<!-- This is actually a `note` container -->
+::: info Static compute graph
+
+NeRF spans a **static** *computate graph*. The key is the [`….detach()`](https://pytorch.org/docs/stable/generated/torch.Tensor.detach.html) call at line $\verb|62|$.
+
+The coarse-to-fine passes are connected by hierarchical sampling, i.e., output of the coarse MLP is used to determine the input of the fine network. Bellow illustrates how the <font color="28ae7b">coarse samples</font> are processed to for the <font color="6495ed">fine ones</font>:
+
+$$
+\left.
+\begin{array}{r}
+\left.
+\begin{array}{r}
+    \left.
+    \begin{array}{r}
+        \green{\verb|z_vals|_\text{coarse}}
+        \xrightarrow[\text{lines \texttt{46} and \texttt{47}}]{}
+        \verb|pts|
+        \\
+        \cdots
+    \end{array}
+    \right\}
+    \xrightarrow[\text{line \texttt{49}}]{\red{\verb|network_query_fn|}}
+    \verb|raw|
+    \xrightarrow[\text{line \texttt{50}}]{\verb|raw2outputs|}
+    \cdots,~\verb|weights|
+    \\
+    \green{\verb|z_vals|_\text{coarse}}
+    \xrightarrow[\text{line \texttt{56}}]{}
+    \verb|z_vals_mid|
+    \\
+    \cdots
+\end{array}
+\right\}
+\xrightarrow[\text{lines \texttt{57} to \texttt{61}}]{\verb|sample_pdf|}
+\verb|z_samples| \\
+\verb|z_vals|
+\end{array}
+\right\}
+\xrightarrow[\text{line \texttt{64}}]{\text{concatenation}}
+~
+\xrightarrow[\text{line \texttt{64}}]{\text{sorting}}
+\blue{\verb|z_vals|_\text{fine}}
+$$
+
+<font color="6495ed">Hierarchically sampled inputs</font> are again fed to the network.
+
+$$
+\left.
+\begin{array}{r}
+    \blue{\verb|z_vals|_\text{fine}}
+    \xrightarrow[\text{lines \texttt{65} and \texttt{66}}]{}
+    \verb|pts|
+    \\
+    \cdots
+\end{array}
+\right\}
+\xrightarrow[\text{line \texttt{71}}]{\red{\verb|network_query_fn|}}
+\cdots
+$$
+
+Consequently, output of the MLP becomes part of its input. It is a **must** to cut the coarse-to-fine edge in the compute graph because it has to be a [directed acyclic one](https://en.wikipedia.org/wiki/Directed_acyclic_graph). Otherwise, if the fine network shared with the coarse one an identical instance of class `NeRF`, there would be cyclic definition, and backpropagation would fail. This is exactly what `z_samples.detach()` does at line $\verb|62|$.
+
+A corollary is that NeRF's compute graph is **static**.
+
+:::
 
 New inputs `pts` to the fine network `network_fine` at lines $\verb|65|$ and $\verb|66|$ are now
 $$
@@ -1355,5 +1422,6 @@ Content on the way. Stay tuned!
 | Aug 31 2022 | Initial release |
 | Nov 24 2022 | Rectify reference list |
 | Dec  2 2022 | Add BibTeX for citation |
+| Apr 20 2023 | Elaborate on static compute graph |
 <!-- | ? | Add explanation on network creation and intialization | -->
 <!-- | ? | Add elaboration on outputs other than `rgb_map` and `weights` | -->
