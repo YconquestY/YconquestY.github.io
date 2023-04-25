@@ -119,7 +119,7 @@ An $n$-dimensional array
 
 Training a ConvNet
 
-![](/prez/fyp/ResNet9.png)
+![](/prez/fyp/resnet9.png)
 
 <!-- .element: class="r-stretch" -->
 
