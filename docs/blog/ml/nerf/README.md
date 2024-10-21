@@ -1,6 +1,15 @@
 ---
-author: "YU Yue"
-isOriginal: true
+title: A Surge in NeRF
+author: false # I am always the author.
+
+article: true
+category:
+    - ML
+tag:
+    - Graphics
+    - Rendering
+    - NeRF
+date: 2022-09-18
 ---
 # A Surge in NeRF
 

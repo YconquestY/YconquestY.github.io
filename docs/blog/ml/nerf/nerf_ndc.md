@@ -1,6 +1,14 @@
 ---
-author: "YU Yue"
-isOriginal: true
+title: "NeRF: How NDC Works"
+author: false # I am always the author
+
+article: true
+category:
+    - ML
+tag:
+    - Graphics
+    - NeRF
+date: 2022-08-12
 ---
 # NeRF: How NDC Works
 
@@ -67,14 +75,14 @@ Perspection projection converts a camera frustum into a cuboid bounded by
 In a camera coordinate system, $z$-axis points backwards by the right hand rule. Consequently, $\gray{0 \gt} n' \gt f'$.
 
 <table>
-    <tr>
+    <tbody><tr>
         <td>
-            <img src="./nerf_ndc/camera.png" alt="Camera" title="source: chapter 4.3, Foundamentals of Computer Graphics">
+            <img src="./nerf_ndc/camera.png" alt="Camera" title="source: chapter 4.3, Foundamentals of Computer Graphics" width="240">
         </td>
         <td>
-            <img src="./nerf_ndc/camera_coordinates.png" alt="Camera coordinates" title="source: chapter 4.3, Foundamentals of Computer Graphics">
+            <img src="./nerf_ndc/camera_coordinates.png" alt="Camera coordinates" title="source: chapter 4.3, Foundamentals of Computer Graphics" width="424">
         </td>
-    </tr>
+    </tr></tbody>
 </table>
 :::
 

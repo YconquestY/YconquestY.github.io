@@ -1,6 +1,16 @@
 ---
-author: "YU Yue"
-isOriginal: true
+title: "NeRF: A Volume Rendering Perspective"
+author: false # I am always the author.
+
+article: true
+star: true
+category:
+    - ML
+tag:
+    - Graphics
+    - Rendering
+    - NeRF
+date: 2022-08-31
 ---
 # NeRF: A Volume Rendering Perspective
 
@@ -8,7 +18,10 @@ isOriginal: true
 
 [NeRF](https://www.matthewtancik.com/nerf) **implicitly** represents a 3D scene with a multi-layer perceptron (MLP) $F: (\boldsymbol{x}, \boldsymbol{d}) \rightarrow (\boldsymbol{c}, \sigma)$ for some position $\boldsymbol{x} \in \mathbb{R}^3$, view direction $\boldsymbol{d} \in [0, \pi) \times [0, 2\pi)$, color $\boldsymbol{c}$, and "opacity" $\sigma$. Rendered results are spectacular.
 
-<YouTube id="gGaqqs5Q-yo" autoplay=true loop=true disableFullscreen=false />
+<VidStack
+    src="youtube/gGaqqs5Q-yo"
+    title="NeRF"
+/>
 
 There have been a number of articles introducing NeRF since its publication in 2020. While most posts mention general methods, few of them elaborate on *why* the volume rendering procedure
 $$
@@ -553,10 +566,10 @@ $$
 $$
 
 <table>
-    <tr>
-        <td><img src="./nerf_rendering/camera_coordinates.png" alt="Camera coordinates" title="source: chapter 4.3, Foundamentals of Computer Graphics"></td>
-        <td><img src="./nerf_rendering/image_coordinates.png" alt="Image coordinates" title="source: chapter 2.1, Computer Vision: Algorithms and Applications; edited by YU Yue"></td>
-    </tr>
+    <tbody><tr>
+        <td><img src="./nerf_rendering/camera_coordinates.png" alt="Camera coordinates" title="source: chapter 4.3, Foundamentals of Computer Graphics" width="332"></td>
+        <td><img src="./nerf_rendering/image_coordinates.png" alt="Image coordinates" title="source: chapter 2.1, Computer Vision: Algorithms and Applications; edited by YU Yue" width="325"></td>
+    </tr></tbody>
 </table>
 
 Applying an offset, pixel coordinates are $\begin{bmatrix} i - \frac{W}{2} & j - \frac{H}{2} & -f_\text{camera} \end{bmatrix}^\mathsf{T}$ in camera frame. A ray is defined by an origin $\boldsymbol{o}_\text{ray}$, which lies at the origin $\boldsymbol{e}$, and its direction $\boldsymbol{d}$ that connects the origin to a pixel. For every pixel $\boldsymbol{p}$ on the image plane, an ejective direction is
