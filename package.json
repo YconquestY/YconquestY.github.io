@@ -1,23 +1,27 @@
 {
-  "name": "my",
-  "version": "0.1.0",
-  "description": "YU Yue's personal website",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "test": "vuepress info",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:clean-dev": "vuepress dev docs --clean-cache"
-  },
-  "author": "YU Yue",
+  "name": "Yue Yu",
+  "description": "Yue Yu's blog",
+  "version": "2.0.0",
   "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "docs:build": "vuepress-vite build docs",
+    "docs:clean-dev": "vuepress-vite dev docs --clean-cache",
+    "docs:dev": "vuepress-vite dev docs",
+    "docs:update-package": "pnpm dlx vp-update"
+  },
   "devDependencies": {
-    "@vuepress/client": "2.0.0-beta.53",
-    "vue": "^3.2.45",
-    "vuepress": "^2.0.0-beta.53",
-    "vuepress-theme-hope": "2.0.0-beta.125"
+    "@vuepress/bundler-vite": "2.0.0-rc.17",
+    "@vuepress/plugin-revealjs": "2.0.0-rc.55",
+    "katex": "^0.16.11",
+    "markmap-lib": "^0.17.2",
+    "markmap-toolbar": "^0.17.2",
+    "markmap-view": "^0.17.2",
+    "mermaid": "^11.3.0",
+    "sass-embedded": "^1.80.3",
+    "vidstack": "^1.12.11",
+    "vue": "^3.5.12",
+    "vuepress": "2.0.0-rc.18",
+    "vuepress-theme-hope": "2.0.0-rc.58"
   }
 }
