@@ -1,5 +1,6 @@
 ---
-layout: Slide
+layout: SlidePage
+title: ELEC4848
 ---
 @slidestart auto
 
@@ -166,16 +167,16 @@ The *novel view synthesis* problem
 <!-- .element: class="r-stretch" -->
 
 $$
-\boldsymbol{c}
-=
-\mathcal{G}_{\boldsymbol{c}}(\boldsymbol{x}, \boldsymbol{d})
+\boldsymbol{c}\
+=\
+\mathcal{G}_{\boldsymbol{c}}(\boldsymbol{x}, \boldsymbol{d})\
 \text{,}~\mathcal{G}_\boldsymbol{c} \in \mathbb{R}^4
 $$
 
 $$
-\sigma
-=
-\mathcal{G}_\sigma(\boldsymbol{x})
+\sigma\
+=\
+\mathcal{G}_\sigma(\boldsymbol{x})\
 \text{,}~\mathcal{G}_\sigma \in \mathbb{R}^3
 $$
 
@@ -190,8 +191,8 @@ Tensor decomposition!
 <!-- .element: class="r-stretch" -->
 
 $$
-\mathcal{T}
-=
+\mathcal{T}\
+=\
 \sum_{r=1}^R \boldsymbol{v}_r^1 \circ \boldsymbol{v}_r^2 \circ \boldsymbol{v}_r^3
 $$
 
@@ -204,12 +205,12 @@ $$
 <!-- .element: class="r-stretch" -->
 
 $$
-\mathcal{T}
-=
-\sum_{r=1}^{R_1} \boldsymbol{v}_r^1 \circ \mathbf{M}^{2,3}_r
-+
-\sum\_{r=1}^{R_2} \boldsymbol{v}_r^2 \circ \mathbf{M}^{1,3}_r
-+
+\mathcal{T}\
+=\
+\sum_{r=1}^{R_1} \boldsymbol{v}_r^1 \circ \mathbf{M}^{2,3}_r\
++\
+\sum\_{r=1}^{R_2} \boldsymbol{v}_r^2 \circ \mathbf{M}^{1,3}_r\
++\
 \sum\_{r=1}^{R_3} \boldsymbol{v}_r^3 \circ \mathbf{M}^{1,2}_r
 $$
 
@@ -242,12 +243,12 @@ $$
 Conversion from a "ball" to a "box"
 
 $$
-\boldsymbol{x} \color{gray}{\in \mathbb{R}^3}
-\longrightarrow
-\boldsymbol{x}'
-\text{ such that }
-x_i
-=
+\boldsymbol{x} \color{gray}{\in \mathbb{R}^3}\
+\longrightarrow\
+\boldsymbol{x}'\
+\text{ such that }\
+x_i\
+=\
 \frac{x_i \|\boldsymbol{x}\|}{\max(|x_1|, |x_2|, |x_3|)}
 $$
 
@@ -282,10 +283,10 @@ Highly positive feedback
 Ray $\boldsymbol{r} = \boldsymbol{o} + z\boldsymbol{d}$ with $z$ ranges from $z_1$ to $z_N$
 
 $$
-\hat{\mathbf{C}}(\boldsymbol{r})
-=
-\sum_{i=1}^{N} T_i \left(1 - e^{-\sigma_i \delta_i} \right) \boldsymbol{c}_i
-, \
+\hat{\mathbf{C}}(\boldsymbol{r})\
+=\
+\sum_{i=1}^{N} T_i \left(1 - e^{-\sigma_i \delta_i} \right) \boldsymbol{c}_i\
+,~
 T_i = \exp \left(-\sum\_{j=1}^{i-1} \sigma_j \delta_j \right)
 $$
 
@@ -294,10 +295,10 @@ $$
 <!-- .slide: data-auto-animate -->
 
 $$
-\hat{\mathbf{C}}(\boldsymbol{r})
-=
-\sum_{i=1}^{N} \color{red}{T_i} \color{green}{\left(1 - e^{-\sigma_i \delta_i} \right)} \color{blue}{\boldsymbol{c}_i}
-, \
+\hat{\mathbf{C}}(\boldsymbol{r})\
+=\
+\sum_{i=1}^{N} \color{red}{T_i} \color{green}{\left(1 - e^{-\sigma_i \delta_i} \right)} \color{blue}{\boldsymbol{c}_i}\
+,~
 T_i = \exp \left(-\sum\_{j=1}^{i-1} \sigma_j \delta_j \right)
 $$
 
@@ -308,10 +309,10 @@ Elementwise ternary operation
 <!-- .slide: data-auto-animate -->
 
 $$
-\hat{\mathbf{C}}(\boldsymbol{r})
-=
-\color{blue}{\sum_{i=1}^{N}} T_i \left(1 - e^{-\sigma_i \delta_i} \right) \boldsymbol{c}_i
-, \
+\hat{\mathbf{C}}(\boldsymbol{r})\
+=\
+\color{blue}{\sum_{i=1}^{N}} T_i \left(1 - e^{-\sigma_i \delta_i} \right) \boldsymbol{c}_i\
+,~
 T_i = \exp \left(-\sum\_{j=1}^{i-1} \sigma_j \delta_j \right)
 $$
 
@@ -322,10 +323,10 @@ Sum reduction
 <!-- .slide: data-auto-animate -->
 
 $$
-\hat{\mathbf{C}}(\boldsymbol{r})
-=
-\sum_{\color{blue}{i}=1}^{N} T_\color{blue}{i} \left(1 - e^{-\sigma_i \delta_i} \right) \boldsymbol{c}_i
-, \
+\hat{\mathbf{C}}(\boldsymbol{r})\
+=\
+\sum_{\color{blue}{i}=1}^{N} T_\color{blue}{i} \left(1 - e^{-\sigma_i \delta_i} \right) \boldsymbol{c}_i\
+,~
 T_\color{blue}{i} = \exp \left(-\sum\_{j=1}^{\color{blue}{i-1}} \sigma_j \delta_j \right)
 $$
 

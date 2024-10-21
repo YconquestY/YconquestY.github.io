@@ -1,5 +1,6 @@
 ---
-layout: Slide
+layout: SlidePage
+title: ELEC4848
 ---
 @slidestart auto
 
@@ -249,8 +250,8 @@ Based on TensoRF
 Given a ray $\boldsymbol{r} = \boldsymbol{o} + z\boldsymbol{d}$, the pixel color is
 
 $$
-\mathbf{C}(\boldsymbol{r})
-=
+\mathbf{C}(\boldsymbol{r})\
+=\
 \int_{z_n}^{z_f} T(z) \sigma \left( \boldsymbol{r}(z) \right) \boldsymbol{c} \left(\boldsymbol{r}(z), \boldsymbol{d} \right) \ dz
 $$
 
@@ -267,8 +268,8 @@ where $T(z) =  \exp \left(-\int_{z_n}^z \sigma \left(\boldsymbol{r} (s) \right) 
 $\boldsymbol{r} = \boldsymbol{o} + z\boldsymbol{d}$, $z$ ranges from $z_1$ to $z_N$
 
 $$
-\hat{\mathbf{C}}(\boldsymbol{r})
-=
+\hat{\mathbf{C}}(\boldsymbol{r})\
+=\
 \sum_{i=1}^{N} T_i \left(1 - e^{-\sigma_i \delta_i} \right) \boldsymbol{c}_i
 $$
 
