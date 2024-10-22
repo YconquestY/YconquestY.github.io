@@ -1,5 +1,5 @@
 
-name: Deploy Docs
+name: deploy docs
 
 on:
   push:
@@ -13,40 +13,39 @@ jobs:
   deploy-gh-pages:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           # if your docs needs submodules, uncomment the following line
-          # submodules: true
+          #submodules: true
 
-      - name: Setup pnpm
+      - name: setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 8
 
 
-      - name: Setup Node.js
+      - name: setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
 
-      - name: Install Deps
+      - name: install dependencies
         run: |
           corepack enable
           pnpm install --frozen-lockfile
 
-      - name: Build Docs
+      - name: build site
         env:
           NODE_OPTIONS: --max_old_space_size=8192
         run: |-
           pnpm run docs:build
-          > src/.vuepress/dist/.nojekyll
+          > docs/.vuepress/dist/.nojekyll
 
-      - name: Deploy Docs
+      - name: deploy to GitHub pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # Deploy Docs
           branch: gh-pages
-          folder: src/.vuepress/dist
+          folder: docs/.vuepress/dist
