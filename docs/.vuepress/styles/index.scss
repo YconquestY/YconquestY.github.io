@@ -6,6 +6,13 @@
 }
 
 @font-face {
+    font-family: 'markmap';
+    src: url('/font/CascadiaMono.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'zh-CN';
     src: url('/font/XWWKMedium.ttf') format('truetype');
     font-weight: normal;
@@ -14,6 +21,12 @@
 
 code {
     font-family: 'code';
+}
+
+// for markmap
+foreignObject {
+    font-family: 'markmap';
+    white-space: nowrap;
 }
 
 .zh {
