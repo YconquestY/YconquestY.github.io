@@ -1,5 +1,6 @@
 ---
 title: "NeRF: How NDC Works"
+#shortTitle:
 author: false # I am always the author
 
 article: true
@@ -502,9 +503,9 @@ Chapter 2.1 in [Computer Vision: Algorithms and Applications](https://szeliski.o
 
 Please use the following BibTeX to cite this post:
 
-```
+```tex:no-line-numbers
 @misc{yyu2022nerfndc,
-    author = {YU Yue},
+    author = {Yu, Yue},
     title  = {NeRF: How NDC Works},
     year   = {2022},
     howpublished = {\url{https://yconquesty.github.io/blog/ml/nerf/nerf_ndc.html}}

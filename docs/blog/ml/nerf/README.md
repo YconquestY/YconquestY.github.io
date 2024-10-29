@@ -1,8 +1,9 @@
 ---
 title: A Surge in NeRF
+#shortTitle:
 author: false # I am always the author.
 
-article: true
+#article: true
 category:
     - ML
 tag:

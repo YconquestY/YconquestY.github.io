@@ -1,5 +1,6 @@
 ---
 title: "NeRF: A Volume Rendering Perspective"
+#shortTitle:
 author: false # I am always the author.
 
 article: true
@@ -403,7 +404,51 @@ coarse to fine
 
 Whereas NeRF is [originally implemented](https://github.com/bmild/nerf) in [Tensrorflow](https://www.tensorflow.org/), code analysis is based on a [faithful reproduction](https://github.com/yenchenlin/nerf-pytorch) in [PyTorch](https://pytorch.org/). The repository is organized as
 
-<img src="./nerf_rendering/nerf-pytorch.png" alt="Directory organization" title="copyright © YU Yue">
+<!-- I am using monospace font to for markmap renderings. The font is set at
+  -- client side with SCSS. So the plugin cannot count the text "length" change
+  -- when generating SVG. The problem is that lines will not adjust accordingly,
+  -- and monospace text may extend beyond its allocated space, so trailing
+  -- characters may not display. As a workaround, use `|` as placeholders to
+  -- stretch text space.
+  -->
+```markmap
+---
+title: nerf-pytorch repository organization
+markmap:
+    colorFreezeLevel: 1
+    extraCss:
+        - /styles/markmap.css
+---
+# nerf-pytorch/||||||||||||||
+
+## configs/|||||||||
+
+- chair.txt|||||||||||||
+- drums.txt|||||||||
+- …
+
+## ~~imgs/||||~~
+
+- ~~pipeline.png|||||||||||||~~
+
+<h2><font color="gray">README.md</font></h2>
+
+## download_example_data.sh|||||||||||||||||
+
+<h2><font color="gray">load_LINEMOD.py||||||||</font></h2>
+
+<h2><font color="gray">load_blender.py|||||||||||||||</font></h2>
+
+<h2><font color="gray">load_deepvoxels.py|||||||||||||||</font></h2>
+
+## load_llff.py|||||||||||||||
+
+## ~~requirements.txt|||||||||||||||||~~
+
+## run_nerf.py|||||||||||
+
+## run_nerf_helpers.py||||||||||||||||||
+```
 
 Let's experiment with the [LLFF dataset](https://drive.google.com/drive/folders/14boI-o5hGO9srnWaaogTU5_ji7wkX2S7), which is comprised of front-facing scenes with camera poses. Pertinent directories and files are
 
@@ -1408,16 +1453,16 @@ Chapter 2.1 in [Computer Vision: Algorithms and Applications](https://szeliski.o
 [Foundamentals of Computer Graphics](https://www.routledge.com/Fundamentals-of-Computer-Graphics/Marschner-Shirley/p/book/9780367505035)<br>
 [NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis](https://arxiv.org/abs/2003.08934)<br>
 [NeRF PyTorch implementation](https://github.com/yenchenlin/nerf-pytorch) by [Yen-Chen Lin](https://yenchenlin.me/)<br>
-[Neural Radiance Field's Volume Rendering 公式分析](https://raymondkevin.top/2021/07/22/neural-radiance-fields-volume-rendering-%E5%85%AC%E5%BC%8F%E5%88%86%E6%9E%90/)<br>
+<a href="https://raymondkevin.top/2021/07/22/neural-radiance-fields-volume-rendering-%E5%85%AC%E5%BC%8F%E5%88%86%E6%9E%90/">Neural Radiance Field's Volume Rendering <span class="zh">公式分析</span></a><br>
 [Optical Models for Direct Volume Rendering](https://ieeexplore.ieee.org/document/468400)<br>
 [Part 1](https://youtu.be/otly9jcZ0Jg?t=5445) of the [SIGGRAPH 2021 course on Advances in Neural Rendering](https://www.neuralrender.com/)<br>
-[深度解读yenchenlin/nerf-pytorch项目](https://blog.csdn.net/NGUever15/article/details/123862996)
+<a href="https://blog.csdn.net/NGUever15/article/details/123862996"><span class="zh">深度解读</span>yenchenlin/nerf-pytorch<span class="zh">项目</span></a>
 
 Please use the following BibTeX to cite this post:
 
-```
+```tex:no-line-numbers
 @misc{yyu2022nerfrendering,
-    author = {YU Yue},
+    author = {Yu, Yue},
     title  = {NeRF: A Volume Rendering Perspective},
     year   = {2022},
     howpublished = {\url{https://yconquesty.github.io/blog/ml/nerf/nerf_rendering.html}}
